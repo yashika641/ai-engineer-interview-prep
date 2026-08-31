@@ -76,7 +76,8 @@ git add -A && git commit -m "study: Day 28 — attention mechanism"
 | `Interview-Cram-Sheet.md` | **the day-before-interview file**, densest form | grows one topic per session |
 | `Interview-Cram-Sheet.docx` | Word version of the above, for reading on any device | generated — never hand-edit |
 | `notes/Day-XX_*.md` | full notes for one topic: mechanism, Q&A, gotchas | one per study session |
-| `system-design/SD-NN_*.md` | full notes for one system-design problem | one per session |
+| `system-design/SD-NN_*.md` | **reference solution + Mermaid architecture diagram** for each of the 20 problems (pre-written); your mock-round notes get appended at the bottom | you append via `/save-session` |
+| `system-design/README.md` | index of all 20 solutions + the AI variants | — |
 | `study-log.csv` | one row per session (date, topic, minutes) | append-only, script + `--log` |
 | `scripts/update_progress.py` | regenerates dashboard streak/stats/log | run it, don't edit output |
 | `scripts/build_cram_docx.py` | `Interview-Cram-Sheet.md` → `.docx` | run after cram-sheet edits |

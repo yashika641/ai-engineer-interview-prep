@@ -18,6 +18,7 @@ Status key:  ⬜ not started  ·  🟡 in progress  ·  ✅ done
 ## 🔥 Streak
 
 <!-- AUTO:STREAK -->
+
 ```
       Aug
 Mon   ·
@@ -30,17 +31,19 @@ Sun
 
 Less  · ░ ▒ ▓ █  More   (· none | ░ <45m | ▒ 45-89m | ▓ 90-134m | █ 135m+)
 ```
+
 <!-- /AUTO:STREAK -->
 
 <!-- AUTO:STATS -->
-| Metric | Value |
-|---|---|
-| 🔥 Current streak | **0 day(s)** |
-| 🏆 Longest streak | 0 day(s) |
-| 📅 Days studied | 0 |
-| 📚 Sessions logged | 0 |
-| ⏱️ Total time | 0.0 h (0 min) |
-| 🆕 First / last session | - / - |
+
+| Metric                  | Value              |
+| ----------------------- | ------------------ |
+| 🔥 Current streak       | **0 day(s)** |
+| 🏆 Longest streak       | 0 day(s)           |
+| 📅 Days studied         | 0                  |
+| 📚 Sessions logged      | 0                  |
+| ⏱️ Total time         | 0.0 h (0 min)      |
+| 🆕 First / last session | - / -              |
 
 <!-- /AUTO:STATS -->
 
@@ -48,20 +51,20 @@ Less  · ░ ▒ ▓ █  More   (· none | ░ <45m | ▒ 45-89m | ▓ 90-134m 
 
 ## 📈 Completion
 
-| Track | Done | Total |
-|---|---|---|
-| 1 · Python + SQL | 0 | 10 |
-| 2 · ML Fundamentals | 0 | 10 |
-| 3 · Deep Learning | 0 | 6 |
-| 4 · LLM Fundamentals | 0 | 8 |
-| 5 · RAG | 0 | 8 |
-| 6 · Agents | 0 | 6 |
-| 7 · Backend + Production AI | 0 | 5 |
-| 8 · MLOps / Cloud / System Design | 0 | 4 |
-| 9 · Project Grilling | 0 | 3 |
-| **Curriculum total** | **0** | **60** |
-| System Design problems | 0 | 20 |
-| AI system-design variants | 0 | 4 |
+| Track                              | Done        | Total        |
+| ---------------------------------- | ----------- | ------------ |
+| 1 · Python + SQL                  | 0           | 10           |
+| 2 · ML Fundamentals               | 0           | 10           |
+| 3 · Deep Learning                 | 0           | 6            |
+| 4 · LLM Fundamentals              | 0           | 8            |
+| 5 · RAG                           | 0           | 8            |
+| 6 · Agents                        | 0           | 6            |
+| 7 · Backend + Production AI       | 0           | 5            |
+| 8 · MLOps / Cloud / System Design | 0           | 4            |
+| 9 · Project Grilling              | 0           | 3            |
+| **Curriculum total**         | **0** | **60** |
+| System Design problems             | 0           | 20           |
+| AI system-design variants          | 0           | 4            |
 
 > Update the "Done" numbers as you tick sections off — `/save-session` does this for you.
 
@@ -159,36 +162,42 @@ Less  · ░ ▒ ▓ █  More   (· none | ░ <45m | ▒ 45-89m | ▓ 90-134m 
 ## 🏗️ System Design — the 20
 
 ### Classic "big systems"
-- [ ] **SD-1** — URL shortener (bit.ly) — key generation, read-heavy caching
-- [ ] **SD-2** — Rate limiter — token bucket vs sliding window, distributed limit
-- [ ] **SD-3** — Chat app (WhatsApp/Slack) — WebSockets, ordering, delivery guarantees
-- [ ] **SD-4** — News feed (Instagram/Twitter) — fan-out on write vs read
-- [ ] **SD-5** — Notification system — pub/sub fan-out, multi-channel, retry/DLQ
-- [ ] **SD-6** — Web crawler — BFS at scale, dedup, per-domain politeness
-- [ ] **SD-7** — File storage / sharing (Dropbox) — chunking, sync conflicts, metadata vs blob
+
+- [ ] **SD-1** — URL shortener (bit.ly) — key generation, read-heavy caching  ·  [↗ solution](system-design/SD-01_URL-Shortener.md)
+- [ ] **SD-2** — Rate limiter — token bucket vs sliding window, distributed limit  ·  [↗ solution](system-design/SD-02_Rate-Limiter.md)
+- [ ] **SD-3** — Chat app (WhatsApp/Slack) — WebSockets, ordering, delivery guarantees  ·  [↗ solution](system-design/SD-03_Chat-Application.md)
+- [ ] **SD-4** — News feed (Instagram/Twitter) — fan-out on write vs read  ·  [↗ solution](system-design/SD-04_News-Feed.md)
+- [ ] **SD-5** — Notification system — pub/sub fan-out, multi-channel, retry/DLQ  ·  [↗ solution](system-design/SD-05_Notification-System.md)
+- [ ] **SD-6** — Web crawler — BFS at scale, dedup, per-domain politeness  ·  [↗ solution](system-design/SD-06_Web-Crawler.md)
+- [ ] **SD-7** — File storage / sharing (Dropbox) — chunking, sync conflicts, metadata vs blob  ·  [↗ solution](system-design/SD-07_File-Storage-Service.md)
 
 ### Location & real-time
-- [ ] **SD-8** — Ride-sharing (Uber) — geospatial index, live location, matching
-- [ ] **SD-9** — Proximity service (Yelp) — geospatial queries at scale
-- [ ] **SD-10** — Live video / streaming (YouTube/Netflix) — encoding, CDN, adaptive bitrate
+
+- [ ] **SD-8** — Ride-sharing (Uber) — geospatial index, live location, matching  ·  [↗ solution](system-design/SD-08_Ride-Sharing-App.md)
+- [ ] **SD-9** — Proximity service (Yelp) — geospatial queries at scale  ·  [↗ solution](system-design/SD-09_Proximity-Service.md)
+- [ ] **SD-10** — Live video / streaming (YouTube/Netflix) — encoding, CDN, adaptive bitrate  ·  [↗ solution](system-design/SD-10_Live-Video-Streaming.md)
 
 ### E-commerce & transactional
-- [ ] **SD-11** — E-commerce checkout / order system — distributed txns, inventory, Saga
-- [ ] **SD-12** — Payment system — idempotency, exactly-once illusion, reconciliation
-- [ ] **SD-13** — Ticket booking (BookMyShow) — concurrent seat booking, locks, races
+
+- [ ] **SD-11** — E-commerce checkout / order system — distributed txns, inventory, Saga  ·  [↗ solution](system-design/SD-11_Ecommerce-Checkout.md)
+- [ ] **SD-12** — Payment system — idempotency, exactly-once illusion, reconciliation  ·  [↗ solution](system-design/SD-12_Payment-System.md)
+- [ ] **SD-13** — Ticket booking (BookMyShow) — concurrent seat booking, locks, races  ·  [↗ solution](system-design/SD-13_Ticket-Booking-System.md)
 
 ### Search & data-heavy
-- [ ] **SD-14** — Search autocomplete / typeahead — trie, popularity ranking, hot-prefix cache
-- [ ] **SD-15** — Distributed cache (Redis-like) — consistent hashing, eviction, replication
-- [ ] **SD-16** — Key-value store (DynamoDB) — partitioning, replication, consistency model
-- [ ] **SD-17** — Log / metrics aggregation — high write throughput, time-series, downsampling
+
+- [ ] **SD-14** — Search autocomplete / typeahead — trie, popularity ranking, hot-prefix cache  ·  [↗ solution](system-design/SD-14_Search-Autocomplete.md)
+- [ ] **SD-15** — Distributed cache (Redis-like) — consistent hashing, eviction, replication  ·  [↗ solution](system-design/SD-15_Distributed-Cache.md)
+- [ ] **SD-16** — Key-value store (DynamoDB) — partitioning, replication, consistency model  ·  [↗ solution](system-design/SD-16_Key-Value-Store.md)
+- [ ] **SD-17** — Log / metrics aggregation — high write throughput, time-series, downsampling  ·  [↗ solution](system-design/SD-17_Log-Metrics-Aggregation.md)
 
 ### Scale-focused / infra
-- [ ] **SD-18** — Distributed job scheduler (cron at scale) — leader election, no dup execution
-- [ ] **SD-19** — ID generator (Snowflake) — unique IDs, no central bottleneck
-- [ ] **SD-20** — API gateway / "Design Twitter" capstone — feed + notifications + search + rate limit
+
+- [ ] **SD-18** — Distributed job scheduler (cron at scale) — leader election, no dup execution  ·  [↗ solution](system-design/SD-18_Distributed-Job-Scheduler.md)
+- [ ] **SD-19** — ID generator (Snowflake) — unique IDs, no central bottleneck  ·  [↗ solution](system-design/SD-19_ID-Generator.md)
+- [ ] **SD-20** — API gateway / "Design Twitter" capstone — feed + notifications + search + rate limit  ·  [↗ solution](system-design/SD-20_Full-Platform-Capstone.md)
 
 ### AI-specific variants
+
 - [ ] **SD-AI-1** — RAG-based Q&A system
 - [ ] **SD-AI-2** — LLM API serving system — request batching, GPU utilization, queueing
 - [ ] **SD-AI-3** — Recommendation system — feature store, candidate gen vs ranking, realtime vs batch
@@ -202,5 +211,7 @@ Less  · ░ ▒ ▓ █  More   (· none | ░ <45m | ▒ 45-89m | ▓ 90-134m 
 ## 🗓️ Session log
 
 <!-- AUTO:LOG -->
+
 _No sessions logged yet. Run a study session, then `/save-session`._
+
 <!-- /AUTO:LOG -->

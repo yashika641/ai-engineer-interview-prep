@@ -17,8 +17,12 @@ If no real study happened in this conversation, say so and stop.
 
 2. **Notes file** — `notes/Day-NN_Kebab-Topic.md` (curriculum) or
    `system-design/SD-NN_Kebab-Name.md` (system design):
-   - If it already exists, UPDATE it (merge new understanding, refresh the date,
-     keep history of what improved). Otherwise create it from `notes/_TEMPLATE.md`.
+   - **System-design SD-1..SD-20 already have a reference solution file.** Do NOT
+     overwrite it — append the mock round under its `## My notes (from study
+     sessions)` heading: date, how it went, what the user missed, curveballs you
+     threw, and anything to add to the reference. Then tick it in the dashboard.
+   - **SD-AI-1..4 and curriculum days:** if the file exists, UPDATE it (merge new
+     understanding, refresh the date). Otherwise create it from `notes/_TEMPLATE.md`.
    - Fill every section from the conversation: TL;DR, core concepts, mechanism,
      the interview Q&A you actually did, gotchas the user hit, connections to other
      days, and the cram-sheet lines.

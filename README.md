@@ -12,7 +12,8 @@ it** (structured notes, a crib sheet, a Word doc, and a GitHub-style streak grap
 | See my progress + streak | **[PROGRESS-DASHBOARD.md](PROGRESS-DASHBOARD.md)** |
 | Cram the day before an interview | **[Interview-Cram-Sheet.docx](Interview-Cram-Sheet.docx)** (source: [`.md`](Interview-Cram-Sheet.md)) |
 | Learn the daily workflow | **[HOW-TO-STUDY-WITH-CLAUDE.md](HOW-TO-STUDY-WITH-CLAUDE.md)** |
-| Read past topic notes | [`notes/`](notes/) · [`system-design/`](system-design/) |
+| Study a system-design problem | [`system-design/`](system-design/README.md) — all 20 solved, with architecture diagrams |
+| Read past topic notes | [`notes/`](notes/) |
 
 ## The loop
 

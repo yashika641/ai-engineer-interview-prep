@@ -263,9 +263,34 @@ run `python scripts/build_cram_docx.py` to refresh **Interview-Cram-Sheet.docx**
 | WebSocket + message queue | chat, live updates | persistent conn for push; queue for ordering/offline |
 | CQRS / read replicas | read-heavy systems | split write model from denormalised read model |
 
-### The 20 — status
-> ⏳ Each problem gets a 4-line summary here after you study it (requirements twist ·
-> key design choice · main bottleneck · the tradeoff they push on).
+### The 20 — one-line recall
+
+Full solution + architecture diagram for each: [`system-design/`](system-design/README.md).
+
+| # | Problem | Key design choice | Main bottleneck / trade-off |
+|---|---|---|---|
+| 1 | **URL Shortener** | Pre-generated key pool — write path never hits the DB for a code | Single-region redirect latency for global users → CDN |
+| 2 | **Rate Limiter** | Externalised atomic counter in Redis (`INCR`), token bucket | Redis throughput → shard keys by client_id; fail open |
+| 3 | **Chat App** | Persistent WebSockets + per-conversation seq numbers + shared broker to route across gateways | Stateful connection tables (deliberate exception) |
+| 4 | **News Feed** | Hybrid: push for normal users, pull/merge-at-read for celebrities | Write storm (push) vs read-time compute (pull) |
+| 5 | **Notification System** | Pub/sub fan-out; one worker pool per channel; DLQ + backoff | Slow provider blocking others; per-user spam → debounce |
+| 6 | **Web Crawler** | Distributed URL frontier, per-domain rate-limited queues; Bloom filter dedup | Frontier throughput → shard by domain hash |
+| 7 | **File Storage (Dropbox)** | Content-hashed chunking (dedup + delta sync) + metadata/blob split + version vectors | Metadata query load if mixed with blob bytes |
+| 8 | **Ride-Sharing (Uber)** | Geohash/quadtree index in-memory (Redis geo); expanding-radius query; ETA-aware ranking | Location-ping write volume → shard geo index by region |
+| 9 | **Proximity (Yelp)** | Geohash index + aggressive caching of popular cells; simple TTL invalidation | Read volume on hot areas; static data → cache-friendly |
+| 10 | **Video Streaming** | Async transcoding pipeline + CDN edge delivery + segmented ABR | Encoding cost/time; # of bitrate tiers vs experience |
+| 11 | **E-Commerce Checkout** | Saga: chained local transactions + events + compensating actions | Last-unit inventory contention → atomic conditional decrement |
+| 12 | **Payment System** | Idempotency key → stored result; periodic ledger-vs-provider reconciliation | Ambiguous outcomes under network failure (at-least-once + idempotency, not exactly-once) |
+| 13 | **Ticket Booking** | Per-seat Redis `SET NX EX` lock with TTL hold; finalize only on payment success | Lock granularity — coarser than per-seat kills throughput |
+| 14 | **Autocomplete** | In-memory trie, precomputed top-k per node; hourly offline rebuild; hot-prefix cache | Freshness vs a read path that never touches a DB |
+| 15 | **Distributed Cache** | Consistent hashing on a ring + virtual nodes + replicate to next 1–2 nodes | Rehash storm on node add/remove (the ring solves it) |
+| 16 | **Key-Value Store (Dynamo)** | Consistent-hash partitioning + N replicas + quorum `W+R>N` + hinted handoff | Coordination cost of strong-consistency quorums; per-request consistency choice |
+| 17 | **Log / Metrics Aggregation** | Sidecar → Kafka → stream processor → time-series DB; tiered downsampling by age | Write throughput → decouple ingest with a queue; retention vs cost |
+| 18 | **Job Scheduler (cron at scale)** | Leader election (Raft/etcd) for dispatch + per-job `SET NX EX` lock as backstop | Brief dual-leader window in a partition → the lock is the real guarantee |
+| 19 | **ID Generator (Snowflake)** | 64-bit: timestamp · pre-assigned machine_id · per-ms sequence — zero coordination | Clock skew / backward NTP jumps → pause generation |
+| 20 | **Full Platform Capstone** | Event bus behind the Post service; every subsystem is an independent async consumer | Synchronous coupling (the bus avoids it); name it early |
 
 ### AI system-design variants
-> ⏳ RAG Q&A · LLM serving (batching / GPU / queue) · recommender · agent orchestration.
+> ⏳ Drill with `/study SD-AI-1..4`. RAG Q&A · LLM serving (batching / GPU / queue) ·
+> recommender (candidate-gen vs ranking, feature store) · agent orchestration
+> (tool loop, state, mid-conversation failure).
